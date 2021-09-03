@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Inspector</title>
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
+    <!-- CSS only -->
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bf9f350f64.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom css only -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- animation  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" class="">
+      <div
+        id="login"
+        style="height: 500px"
+        class="
+          row
+          p-5
+          justify-content-center
+          g-0
+          align-items-center
+          animate__animated animate__fadeIn
+        "
+      >
+        <div class="col-md-3 mx-auto">
+          <div class="text-center">
+            <img
+              height="500px"
+              width="50px"
+              src="./img/logo.png"
+              class="img-fluid"
+              alt=""
+            />
+            <h3 class="text-dark">Sign in</h3>
+          </div>
+          <!-- Email input -->
+
+          <div class="form-floating my-4">
+            <input
+              placeholder="Github username *"
+              id="username_input"
+              type="text"
+              class="
+                form-control
+                fs-5
+                text-center
+                py-4
+                fw-bold
+                border-3
+                rounded-5
+              "
+              required
+            />
+            <label
+              class="special_font mx-auto text-center"
+              for="username_input p-5"
+              >Github username
+            </label>
+
+            <small class="text-dark display-5 fs-6"
+              >In order to find your github account you must enter your github
+              username.</small
+            >
+          </div>
+
+          <!-- Submit button -->
+          <button
+            onclick="loadData()"
+            id="find_btn"
+            class="btn btn-success fs-6 btn-block"
+          >
+            Find
+          </button>
+        </div>
+      </div>
+
+      <div id="profile" class="container my-5">
+        <div class="row">
+          <div class="col-md-3 col-sm-12 animate__animated animate__fadeInLeft">
+            <div>
+              <img id="profile_pic" class="w-75 rounded-circle" src="" alt="" />
+            </div>
+            <div class="my-4">
+              <h5
+                id="fullname"
+                class="h2 text-dark fw-normal special_font"
+              ></h5>
+              <p class="fw-lighter fs-5">
+                <i class="fas fa-sm fa-user"></i> <span id="username"></span>
+              </p>
+              <p class="fw-light fs-6">
+                <i class="fas fa-arrow-circle-left"></i> Followers:
+                <span id="total_follower"></span>
+                <i class="fas fa-arrow-circle-right"></i> Following:
+                <span id="total_following"></span>
+              </p>
+              <p id="bio" class="fw-light"></p>
+              <p class="fs-4 mb-0 pb-0 fw-light">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="location"></span>
+              </p>
+              <p class="fw-lighter">
+                <i class="fas fa-clock fa-sm"></i> <span id="created"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-9 col-sm-12">
+            <button onclick="showRepository()" class="btn">
+              <i class="fas fa-lg fa-list-alt"></i> Repository
+            </button>
+            <button onclick="showFollower()" class="btn">
+              <i class="fas fa-lg fa-users"></i> Followers
+            </button>
+            <button onclick="logOut()" class="btn">
+              <i class="fas fa-lg fa-sign-out-alt"></i> Logout
+            </button>
+
+            <div
+              id="spinner"
+              class="spinner-border text-dark mx-auto mt-5"
+              role="status"
+            >
+              <span class="sr-only">Loading...</span>
+            </div>
+
+            <!-- repo area  -->
+            <div id="repo" class="row my-4 gy-2 gx-2"></div>
+            <!-- followers area  -->
+            <div id="follower" class="row my-4 gy-2 gx-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center text-muted fw-lighter">
+      <p class="">
+        Copyright ©
+        <a
+          class="text-dark text-decoration-underline fw-bold"
+          href="http://fb.com/icerahi"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Rafi Zaman</a
+        >
+        2021.
+      </p>
+    </footer>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
